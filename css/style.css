@@ -1,0 +1,239 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Oswald:wght@200&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  padding: 5vh 5vw;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #eee;
+}
+section article {
+  width: 20%;
+  height: 25%;
+}
+section article.wid3 {
+  width: 60%;
+}
+section article.wid3 h1,
+section article.wid3 h2 {
+  font-weight: bold;
+  font-family: "Oswald";
+  line-height: 1;
+  letter-spacing: 2px;
+}
+section article.wid3 h1 {
+  font-size: 26px;
+  color: #00ccff;
+  margin-bottom: 10px;
+}
+section article.wid3 h2 {
+  font-size: 20px;
+  color: #7ab1ea;
+  margin-bottom: 20px;
+}
+section article.wid3 p {
+  width: 70%;
+  font: 14px/1.3 "arial";
+  color: #999;
+}
+section article.box1 {
+  padding: 30px;
+  background-color: #fff;
+}
+section article.box1 .inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #00ccff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section article.box1 .inner h2 {
+  font: normal 50px/1 "monoton";
+  color: #00ccff;
+  margin-bottom: 10px;
+}
+section article.box1 .inner p {
+  font: 14px/1 "arial";
+  color: #7ab1ea;
+  letter-spacing: 2px;
+}
+section article.box2 {
+  background: linear-gradient(150deg, #00ccff, #7ab1ea);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+section article.box2:hover h2 {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+section article.box2:hover p {
+  transform: translateY(100px);
+  opacity: 0;
+}
+section article.box2:hover a {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+section article.box2 h2 {
+  font: 80px/1 "monoton";
+  color: #fff;
+  transition: 0.5s;
+}
+section article.box2 h2 span {
+  font-size: 30px;
+  margin-left: 10px;
+}
+section article.box2 p {
+  width: 100%;
+  text-align: center;
+  font: 16px/1 "oswald";
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+section article.box2 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 30px;
+  border: 1px solid #fff;
+  font: 14px/1 "arial";
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+section article.box2 a:hover {
+  background-color: #fff;
+  color: #00ccff;
+}
+section article.wid2 {
+  width: 40%;
+  background-color: #00ccff;
+  padding: 20px 70px;
+  display: flex;
+  align-items: center;
+}
+section article.wid2 h2,
+section article.wid2 h3 {
+  font-weight: bold;
+  font-family: "oswald";
+  line-height: 1;
+  letter-spacing: 2px;
+}
+section article.wid2 h2 {
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+section article.wid2 h2::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+section article.wid2 h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #eee;
+}
+section article.wid2 p {
+  font: 15px/1 "arial";
+  color: #fff;
+}
+section article.txt {
+  padding: 30px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: flex-start;
+}
+section article.txt h2 {
+  font: bold 18px/1 "oswald";
+  color: #777;
+  margin-bottom: 5px;
+}
+section article.txt h2::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: orangered;
+  margin-bottom: 15px;
+}
+section article.txt p {
+  font: 12px/1.3 "arial";
+  color: #bbb;
+}
+section article.pic img,
+section article.pic video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+반응형 페이지에서는 많은 컨텐츠를 가지고 가실필요가 없습니다.
+*/
+@media screen and (max-width: 1399px) {
+  section {
+    height: auto;
+  }
+  section article {
+    width: 33.3333333333%;
+    height: 220px;
+  }
+  section article:empty {
+    display: none;
+  }
+  section article.wid3, section article.wid2 {
+    width: 66.6666%;
+  }
+}
+@media screen and (max-width: 899px) {
+  section article {
+    width: 50%;
+  }
+  section article.wid3, section article.wid2 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 619px) {
+  section article {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
